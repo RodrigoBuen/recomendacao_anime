@@ -141,20 +141,46 @@ button {
 }
 
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     body {
         padding: 10px;
     }
 
     .terminal {
         padding: 15px;
+        width: 100%;
     }
 
-    input[type="text"], button {
+    form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input[type="text"] {
         width: 100%;
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+        padding: 14px;
     }
 
     .output {
         padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    input[type="text"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
     }
 }
