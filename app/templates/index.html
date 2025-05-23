@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendador de Animes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="terminal">
+        <h2>🎌 Recomendador de Animes</h2>
+        <form method="post">
+            <input type="text" name="anime" placeholder="Digite o nome do anime..." required>
+            <button type="submit">Obter Recomendações</button>
+        </form>
+
+        <!-- Animação de carregamento -->
+        <div id="loader" class="loader" style="display: none;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <p>Processando recomendação...</p>
+        </div>
+
+        <!-- Área de saída formatada -->
+        {% if resposta %}
+            <div class="output">
+                {{ resposta | safe }}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function () {
+            document.getElementById("loader").style.display = "flex";
+        });
+    </script>
+</body>
+</html>
